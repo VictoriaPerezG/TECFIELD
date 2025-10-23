@@ -12,13 +12,14 @@
 /* Estilos */
 
 body {
-  background-color: #f8f9fc;
+  background-color: #f0f0f0;
   overflow-x: hidden;
 }
 
 .item-naranja{
   color: var(--color-primario);
 }
+
 
 /* nav */
 
