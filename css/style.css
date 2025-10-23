@@ -1,0 +1,133 @@
+/*RESET*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primario:#EA5501;
+}
+
+/* Estilos */
+
+body {
+  background-color: #f8f9fc;
+  overflow-x: hidden;
+}
+
+.item-naranja{
+  color: var(--color-primario);
+}
+
+/* nav */
+
+ .nav-link:hover,
+ .nav-link.active {
+  color: #fff;
+  background-color: rgba(234, 85, 1, 0.15);
+  border-left: 4px solid var(--color-primario);
+}
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #1b1f3b;
+}
+
+.topbar .nav-link {
+  color: white;
+}
+
+
+/* Contenido */
+.main-content {
+margin-left: auto;
+  margin: 0 auto;
+  padding: 80px 20px 20px 20px;
+  max-width: 1200px; /* limita el ancho total */
+  transition: margin-left 0.3s ease;
+
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* cards estilos */
+.card {
+  border: none;
+  border-left: 4px solid var(--color-primario);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+  color: #1b1f3b;
+}
+
+/* Footer */
+.pie-pagina {
+  background-color: #ffffff;
+  padding: 1rem 0;
+  margin-top: auto;
+  color: #6c757d;
+  text-align: center;}
+
+.icono-pie{
+  color: #6c757d;
+}
+
+/*Contacto form*/
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    color: black;
+  }
+  
+.icon-circle {
+    background-color:var(--color-primario); /* círculo semitransparente */
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+.contact-item h6 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.contact-item p {
+  margin: 0;
+  color: black;
+}
+
+/* secion patrocinadore */
+.sponsor-logo {
+  height: 70px;
+  max-width: 160px;
+ 
+}
+
+
+
+
+
