@@ -90,11 +90,9 @@ export class obraUi {
         btnEditar.addEventListener("click", () => this.cargarParaEdicion(obra));        
         console.log(this.crearBoton);
 
+        //boton eliminar
         const btnEliminar = this.crearBoton("Eliminar", "btn btn-danger btn-sm");
-        btnEliminar.addEventListener("click", () => {
-            this.manager.eliminar(obra.id);
-            this.render();
-        });
+        btnEliminar.addEventListener("click",() => this.confirmarBorrar(obra));
 
         colAcciones.append(btnEditar, " ", btnEliminar);
 
@@ -102,7 +100,7 @@ export class obraUi {
         fila.append( colNumero, colContratista, colDesarrollo, colFecha, colAcciones);
         tbody.appendChild(fila);
     });
-}
+  }
 
 
   crearBoton(texto, clases) {
@@ -119,5 +117,16 @@ export class obraUi {
     this.desarrollo.value = "Automatizacion";
     this.fechaInicio.value = "";
 
+  }
+
+  //confirmacion eliminacion obra 
+  confirmarBorrar(obra) {
+    if (confirm("¿Deseas eliminar esta obra?")) {
+      alert("¡Acción confirmada!");
+      this.manager.eliminar(obra.id);
+      this.render();
+    } else {
+      alert("Acción cancelada.");
+    }
   }
 }
