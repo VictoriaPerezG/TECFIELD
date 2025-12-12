@@ -11,6 +11,7 @@ export class obraUi {
     this.btnAgregar = document.getElementById("agregarObra");
     this.listado = document.getElementById("listadoObras");
     this.btnAgregar.addEventListener("click", () => this.handleAgregar());
+   
   }
 
   handleAgregar() {
@@ -50,6 +51,7 @@ export class obraUi {
 
     this.obraEditando = obra;
     this.btnAgregar.textContent = "Guardar Cambios";
+    document.getElementById("exampleModalToggleLabel").textContent = "Editar Obra";
   }
 
   render() {
@@ -74,16 +76,19 @@ export class obraUi {
 
          // Fecha de inicio
         const colFecha = document.createElement("td");
-        const fechaFormateada = new Date(fechaInicio);
-        colFecha.textContent = fechaFormateada;
-        console.log(fechaFormateada);
+        colFecha.textContent = obra.fechaInicio;
+        console.log(obra.fechaInicio);
         
 
         // Botones de acciones
         const colAcciones = document.createElement("td");
 
+        //boton editar
         const btnEditar = this.crearBoton("Editar", "btn btn-success btn-sm");
-        btnEditar.addEventListener("click", () => this.cargarParaEdicion(obra));
+        btnEditar.setAttribute("data-bs-toggle", "modal");
+        btnEditar.setAttribute("data-bs-target", "#exampleModalToggle");
+        btnEditar.addEventListener("click", () => this.cargarParaEdicion(obra));        
+        console.log(this.crearBoton);
 
         const btnEliminar = this.crearBoton("Eliminar", "btn btn-danger btn-sm");
         btnEliminar.addEventListener("click", () => {
@@ -107,11 +112,11 @@ export class obraUi {
     return btn;
   }
 
-  // Limpieza tras agregar/editar
+  // limpieza formulario 
   limpiarFormulario() {
     this.numero.value = "";
-    this.contratista.value = "Contratista";
-    this.desarrollo.value = "";
+    this.contratista.value = "";
+    this.desarrollo.value = "Automatizacion";
     this.fechaInicio.value = "";
 
   }
